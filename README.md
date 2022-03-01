@@ -19,6 +19,8 @@ AKC Dog Breed Traits: This dataset contains dog breed traits (temperament, heigh
 
 Dog Breed Images and Labels: This dataset contains images of over 10,000 dogs from 120 different breeds, along with a dataframe containing each image name and their corresponding breed. This dataset comes from Kaggle https://www.kaggle.com/c/dog-breed-identification.
 
+(Image data has been removed from the repository due to folder size. Image data is downloadable from the Kaggle link above)
+
 
 # Modeling
 We used pre-trained Convolutional Neural Networks for models:
@@ -68,7 +70,7 @@ For any additional questions, please contact Hannah Schurman at [hannah.schurman
 │   ├── akc_breeds_final         # pre-processed final version of akc_breeds csv file - cleaned up for easy use with image labels
 │   ├── dog-breed-identification # folder containing train images
 │   │   ├──labels.csv            # csv file containing filenames and corresponding breed labels for each image
-│   │   ├──train                 # folder containing over 10,000 images of dogs for training model
+│   │   ├──train                 # folder containing images of dogs for training model - put in .gitignore because of folder size
 │   ├── test_dogs                # folder containing test images of friends dogs to test on model
 │   ├── models                   # Saved tensorflow model and tensorflow.js data
 ├── images                       
