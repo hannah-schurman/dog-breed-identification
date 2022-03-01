@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { StatusBar } from 'expo-status-bar';
-import * as jpeg from 'jpeg-js'
-import ReactNative, { Image, ImageBackground, StyleSheet, Text, View, ScrollView, TouchableOpacity } from 'react-native';
+import * as jpeg from 'jpeg-js';
+import ReactNative, { NativeModules, Image, ImageBackground, StyleSheet, Text, View, ScrollView, TouchableOpacity } from 'react-native';
 import * as tf from '@tensorflow/tfjs';
 import {fetch, bundleResourceIO } from '@tensorflow/tfjs-react-native';
 import dog from './assets/dog_background.jpg';
@@ -10,14 +10,27 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import 'react-native-gesture-handler';
 import * as ImagePicker from 'expo-image-picker';
 
+import * as ImageManipulator from 'expo-image-manipulator';
+
+
 ReactNative.LogBox.ignoreAllLogs(true);
 
 const Stack = createNativeStackNavigator();
+const breedData = require('./breeds.json');
 
 export default function App() {
+  // define breed related variables that will be set with model evaluation
   const [selectedImage, setSelectedImage] = React.useState(null);
-  const [breedDetector, setBreedDetector] = useState("")
+  const [breedDetector, setBreedDetector] = useState("");
+  const [breed, setBreed] = useState("");
+  const [breedName, setBreedName] = useState("");
+  const [breedGroup, setBreedGroup] = useState("");
+  const [breedTemperament, setBreedTemperament] = useState("");
+  const [breedHeight, setBreedHeight] = useState("");
+  const [breedWeight, setBreedWeight] = useState("");
+  const [breedEnergy, setBreedEnergy] = useState("");
 
+  // function will load model 
   useEffect(() => {
     async function loadModel() {
       console.log("[+] Application Started")
@@ -26,7 +39,7 @@ export default function App() {
       console.log("[+] Loading custom breed detection model")
       const modelJson = await require('./assets/model.json');
       const modelWeight = await require('./assets/group1-shard1of1.bin');
-      const breedDetector = await tf.loadLayersModel(bundleResourceIO(modelJson, modelWeight));
+      const breedDetector = tf.loadGraphModel(bundleResourceIO(modelJson, modelWeight));
 
       console.log("[+] Loaded Model")
       setBreedDetector(breedDetector)
@@ -34,11 +47,14 @@ export default function App() {
     loadModel()
   }, []);
 
+  // converts an image to a tensor that can be used in model
   function imageToTensor(rawImageData) {
     console.log("Converting Image to tensor");
     const TO_UINT8ARRAY = true;
     const { width, height, data } = jpeg.decode(rawImageData, TO_UINT8ARRAY);
-    console.log(`width of the image -> ${width} and ${height}`);
+    console.log("Converted Image");
+
+    //console.log(`width of the image -> ${width} and ${height}`);
 
     const buffer = new Uint8Array(width * height * 3);
     let offset = 0;
@@ -56,6 +72,60 @@ export default function App() {
     return tf.tensor3d(normed, [height, width, 3]).expandDims();
   };
 
+  // function to predict breed based on image
+  function predictBreed(image){
+    try{
+      console.log("[+] Retrieving image from input")
+
+      //const imageTensor = imageToTensor(image)
+      console.log("[+] Retrieved image")
+    
+      // model gets to here! 
+      //let result = breedDetector.predict(image).data()
+      // find argmax of result and use as predicted breed
+      setBreed('16')
+      console.log("[+] Prediction Completed")
+    }catch{
+      console.log("[-] Unable to load image")
+    }
+    return (
+      BreedInfo(breed)
+    );
+  }
+
+  // function that returns breed information for identification page
+  function BreedInfo() {
+    // setBreed(predictBreed());
+    setBreedName(breedData.Breed[breed]);
+    setBreedTemperament(breedData.temperament[breed]);
+    setBreedGroup(breedData.group[breed]);
+    setBreedHeight(Math.round((breedData.min_height[breed]+breedData.max_height[breed])/2));
+    setBreedWeight (Math.round((breedData.min_weight[breed]+breedData.max_weight[breed])/2));
+    setBreedEnergy(breedData.energy_level_value[breed]*10);
+
+    return (
+      <View style={{ marginTop: 20, flex: 1 }}>
+          <View style={{ marginBottom: 100, flex: 1 }}>
+            <Image source={{ uri: selectedImage.localUri }} style={styles.thumbnail} />
+          
+            <Text style={breedStyles.titleText}>Dog Breed: {breedName}</Text>
+            <Text style={breedStyles.infoText}>Temperament: {breedTemperament}</Text>
+            <Text style={breedStyles.infoText}>Group: {breedGroup}</Text>
+            <Text style={breedStyles.infoText}>Average Height: {breedHeight}</Text>
+            <Text style={breedStyles.infoText}>Average Weight: {breedWeight}</Text>
+            <Text style={breedStyles.infoText}>Energy Level: {breedEnergy}/10</Text>
+         
+            {/* <TouchableOpacity
+              onPress={() => NativeModules.DevSettings.reload()}
+              style={breedStyles.button}>
+              <Text style={{fontSize: 30, color: 'black' }}>Reset Classifier</Text>
+            </TouchableOpacity> */}
+          </View>
+      </View>
+    );
+  }
+
+  // identification page that allows input from camera and image library
   function Identification() {
 
     const openImagePickerAsync = async () => {
@@ -74,6 +144,7 @@ export default function App() {
         }
 
         setSelectedImage({ localUri: result.uri });
+        // predictBreed(result)
       };
 
     const openCamera = async () => {
@@ -85,36 +156,28 @@ export default function App() {
         }
 
         const result = await ImagePicker.launchCameraAsync();
-        result = imageToTensor(result).resizeBilinear([224,224]).reshape([1,224,224,3])
 
         console.log(result);
 
         if (result.cancelled === true) {
-        return ;
+          return ;
         }
-
+        //predictBreed(result)
         setSelectedImage({ localUri: result.uri });
     }
+
+    //gets breed info after getting image
     if (selectedImage !== null) {
         return (
-        <View style={{ marginTop: 20, flex: 1 }}>
-            <View style={{ marginBottom: 100, flex: 1 }}>
-            <Image source={{ uri: selectedImage.localUri }} style={styles.thumbnail} />
-            </View>
-
-            <ScrollView style={styles.scrollView}>
-            <Text style={styles.text}> Dog breed here</Text>
-            <Text style={styles.text}> Dog info here</Text>
-            </ScrollView>
-        </View>
+          predictBreed(selectedImage)
         );
     }
 
     return (
-        <View style={styles.container}>
+      <View style={styles.container}>
 
         <View style={{flex: 0, marginBottom: 30, marginHorizontal: 50, }}> 
-        <Text style={styles.text1}>Welcome to Paw Print. Select an image of your furry friend and we will predict their breed!</Text>
+          <Text style={styles.text1}>Welcome to Paw Print. Select an image of your furry friend and we will predict their breed!</Text>
         </View>
 
         <TouchableOpacity
@@ -129,26 +192,11 @@ export default function App() {
             <Text style={{ fontSize: 30, color: 'white' }}>Take a photo</Text>
         </TouchableOpacity>
 
-        </View>
+      </View>
     )
   }
 
-  const predictBreed = async() => {
-    try{
-      console.log("[+] Retrieving image from input")
-      const imageTensor = imageToTensor(selectedImage).resizeBilinear([224,224])
-
-      let result = await breedDetector.predict(imageTensor).data()
-
-      // find argmax of result and use as predicted breed
-
-      console.log("[+] Prediction Completed")
-    }catch{
-      console.log("[-] Unable to load image")
-    }
-    
-  }
-
+  // home page
   function HomeScreen( {navigation}) {
   
     return (
@@ -180,10 +228,36 @@ export default function App() {
           name="Identify"
           component={Identification}
         />
+        
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
+
+// style sheets
+const breedStyles = StyleSheet.create({
+  titleText: {
+    fontSize: 30,
+    paddingBottom: 10,
+    marginTop: 50,
+    textAlign: 'center'
+  },
+  infoText: {
+    fontSize: 20,
+    paddingBottom: 5,
+    textAlign: 'center'
+  },
+  button: {
+    marginTop: 50,
+    backgroundColor: 'orange', 
+    alignItems: 'center',
+    marginHorizontal: 50,
+    opacity: 0.9,
+    borderRadius: 10,
+    paddingBottom: 5,
+    paddingTop: 5
+  }
+})
 
 const styles = StyleSheet.create({
   container: {
@@ -238,8 +312,4 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 20,
   },
-  scrollView: {
-    backgroundColor: 'grey',
-  },
-
 });

@@ -39,6 +39,7 @@ We then took the top 5 predictions and filled the bar in green if any of those 5
 <img src='images/top_predictions.png'/>
 <br>
 We then got breed traits from the AKC Breed dataframe<br>
+These traits show Breed, Breed Group, Temperament, Popularity, Avg Height, Avg Weight, and Energy level<br>
 <img src='images/breed_traits.png'/>
 <br>
 The following figure shows a confusion matrix for our models predictions on our test holdout images<br>
