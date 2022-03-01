@@ -33,13 +33,13 @@ We used pre-trained Convolutional Neural Networks for models:
 As stated above we decided to go with a MobileNetV2 model because it performs faster and takes up less space and showed to have really high accuracy scores compared to any other models we tried. It is also better used in Mobile App's. <br>
 <br>
 Below is an example of how our model would perform given a single image as input<br>
-<img src='images/prediction.png' width=200/>
+<img src='images/prediction.png'/>
 <br>
 We then took the top 5 predictions and filled the bar in green if any of those 5 predictions were accurate<br>
-<img src='images/top_predictions.png' width=200/>
+<img src='images/top_predictions.png'/>
 <br>
 We then got breed traits from the AKC Breed dataframe<br>
-<img src='images/breed_traits.png' width=200/>
+<img src='images/breed_traits.png'/>
 
 
 # Conclusion
