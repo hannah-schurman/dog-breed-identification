@@ -1542,6 +1542,11 @@
   resolved "https://registry.npmjs.org/@sideway/pinpoint/-/pinpoint-2.0.0.tgz"
   integrity sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==
 
+"@tensorflow-models/mobilenet@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@tensorflow-models/mobilenet/-/mobilenet-2.1.0.tgz#58583f0793a7091eda370aa441d09d94b808aeb1"
+  integrity sha512-JjqT9ijHDFA2FEpUGWg7H2lQ0GrMuE2VmiCRBYmUew6b4JKht8LXDjG5HxZh95YH6c/25sZWTpGeHbquloH+hw==
+
 "@tensorflow/tfjs-backend-cpu@3.13.0":
   version "3.13.0"
   resolved "https://registry.yarnpkg.com/@tensorflow/tfjs-backend-cpu/-/tfjs-backend-cpu-3.13.0.tgz#2a141256fe0a5de0670c31a9ba6990465708dee4"
@@ -2878,6 +2883,18 @@ expo-gl@~11.1.1:
     expo-gl-cpp "~11.1.0"
     invariant "^2.2.4"
 
+expo-image-loader@~3.1.0:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/expo-image-loader/-/expo-image-loader-3.1.1.tgz#f88d94e66c5a102f15d858973c03b92e10662575"
+  integrity sha512-ZX4Bh3K4CCX1aZflnmbOgFNLS+c0/GUys4wdvqxO+4A4KU1NNb3jE7RVa/OFYNPDcGhEw20c1QjyE/WsVURJpg==
+
+expo-image-manipulator@^10.2.1:
+  version "10.2.1"
+  resolved "https://registry.yarnpkg.com/expo-image-manipulator/-/expo-image-manipulator-10.2.1.tgz#6fd0db248f10a5e99b16e1f53d382ca77e660b4a"
+  integrity sha512-0klgPMn8fIUkbWpRVT0LVCtq0ozzm3gO60jZEcJPofJRQWDKuv3Rcf0+8pTqpn45J53eAGsuZ72/Yj0AJqaedQ==
+  dependencies:
+    expo-image-loader "~3.1.0"
+
 expo-image-picker@~12.0.1:
   version "12.0.2"
   resolved "https://registry.npmjs.org/expo-image-picker/-/expo-image-picker-12.0.2.tgz"
@@ -2909,6 +2926,11 @@ expo-modules-core@0.6.5:
   dependencies:
     compare-versions "^3.4.0"
     invariant "^2.2.4"
+
+expo-permissions@^13.1.1:
+  version "13.1.1"
+  resolved "https://registry.yarnpkg.com/expo-permissions/-/expo-permissions-13.1.1.tgz#67414ea027d0e7db61f1bfa83a98ef6af512b59e"
+  integrity sha512-vo2sDlxDJE+THLhUO7G8kMHYnNJoMvYjurFNRvHjEvZAUvFmRgulejr8HlzCpb820brXNg+QWalZCtyA5oQkqg==
 
 expo-status-bar@~1.2.0:
   version "1.2.0"
@@ -5047,6 +5069,11 @@ react-native-gesture-handler@~2.1.0:
     invariant "^2.2.4"
     lodash "^4.17.21"
     prop-types "^15.7.2"
+
+react-native-restart@^0.0.24:
+  version "0.0.24"
+  resolved "https://registry.yarnpkg.com/react-native-restart/-/react-native-restart-0.0.24.tgz#c7036f25d900d9221b84d3e5129b02d4289d4e94"
+  integrity sha512-pvJNU3NwQk6bCG2gOWcQpZ4IxhtELB0K9gzmtixfsaTFbW1UXXHkJNjk1kHazcbH5hrD7QbUkR63fsAVh8X4VQ==
 
 react-native-safe-area-context@3.3.2:
   version "3.3.2"
