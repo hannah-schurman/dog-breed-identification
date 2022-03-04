@@ -47,6 +47,9 @@ These traits show Breed, Breed Group, Temperament, Popularity, Avg Height, Avg W
 The following figure shows a confusion matrix for our models predictions on our test holdout images<br>
 <img src='images/confusion.png'/>
 
+# Mobile Application
+In addition to the modeling and evaluation carried out in the jupyter notebooks, this repository also contains the work done to create a mobile app for dog breed prediction. This mobile app takes input from either your phone camera or library and will predict the dog's breed as well as output the corresponding personality traits. For more information regarding the Mobile Application, see the [mobile_app/dog-identification]() folder.
+
 
 # Conclusion
 We have created a model that will predict a dog's breed with an accuracy of 78%. Further analysis shows that our model was actually able to classify the correct breed within the top 5 predictions at a 94% accuracy rate. We can conclude that our final model's 78% accuracy is an improvement over the current 67% accuracy of shelter's visual identification.
@@ -58,7 +61,9 @@ To guarantee best results, we recommend the input image be good lighting, withou
 Given more time and resources I would love to collect more training data so to work towards increasing our models accuracy. While our model has performed relatively well on being able to accurately classify 120 dog breeds, for this model to be the most useful for animal shelters it will have to improve accuracy on any mixed-breed dogs, since more often dogs in shelters are mixed-breed and not purebred.
 
 # Further Questions
-See the full analysis in the [Jupyter Notebook]() or review [this presentation]()
+See the full analysis in the [Jupyter Notebook](https://github.com/hannah-schurman/dog-breed-identification/blob/main/dog_breed_classifier.ipynb) or review [this presentation]()
+
+For information regarding the mobile application, navigate to the README inside the [mobile_app/dog-identification](https://github.com/hannah-schurman/dog-breed-identification/tree/main/mobile_app/dog-identification) folder. 
 
 For any additional questions, please contact Hannah Schurman at [hannah.schurman1@gmail.com](hannah.schurman1@gmail.com)
 
