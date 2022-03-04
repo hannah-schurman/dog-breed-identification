@@ -26,7 +26,7 @@ For reproducability: images should be stored in a folder with a file path: 'data
 # Modeling
 Step 1: Preprocess AKC Breed labels/traits. The dog_breed_preprocessing.ipynb notebook carries out preprocessing steps to ensure that breed labels within the Image dataset and labels within the AKC dataset match up. This involved a significant amount of string formatting. 
 
-Step 2: Process images for modeling. This involved reshaping images and performing data augmentation on the images to increase training data. (Below is an example of data augmentation, specifically using the parameter 'rotational_range'=15)
+Step 2: Process images for modeling. This involved reshaping images and performing data augmentation on the images to increase training data. (Below is an example of data augmentation, specifically using the parameter 'rotational_range'=15)<br>
 <img src='images/augment.png'/>
 
 Step 3: Model evaluation. We used pre-trained Convolutional Neural Networks and took an iterative approach to find the best performing model on train, validation, and test images. 
