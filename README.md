@@ -48,7 +48,7 @@ The following figure shows a confusion matrix for our models predictions on our 
 <img src='images/confusion.png'/>
 
 # Mobile Application
-In addition to the modeling and evaluation carried out in the jupyter notebooks, this repository also contains the work done to create a mobile app for dog breed prediction. This mobile app takes input from either your phone camera or library and will predict the dog's breed as well as output the corresponding personality traits. For more information regarding the Mobile Application, see the [mobile_app/dog-identification]() folder.
+In addition to the modeling and evaluation carried out in the jupyter notebooks, this repository also contains the work done to create a mobile app for dog breed prediction. This mobile app takes input from either your phone camera or library and will predict the dog's breed as well as output the corresponding personality traits. For more information regarding the Mobile Application, see the [mobile_app/dog-identification](https://github.com/hannah-schurman/dog-breed-identification/tree/main/mobile_app/dog-identification) folder.
 
 
 # Conclusion
