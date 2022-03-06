@@ -14,7 +14,7 @@ This mobile application has not been deployed. Follow these steps to set the app
 
 # App Examples
 The screenshots below give examples of how the app is used:<br>
-<img src='Images/splash_screen.PNG'/>
+<img src='Images/splash_screen.PNG' width=400/>
 <img src='Images/welcome.PNG'/>
 <img scr='Images/input.PNG'>
 <img src='Images/processing.PNG'/>
