@@ -11,6 +11,13 @@ Using Tensorflow's Pre-Trained Convolutional Neural Networks we were able to pro
 # Business Understanding
 Every year over 3 million dogs end up in animal shelters. A study done in 2013 showed that shelter staff correctly visually identify breeds 67% of the time, and that accuracy was exponentially lower for dogs that are mixed breeds. Additionally the number one question asked by people looking for dogs in a shelter is "what breed is that dog?". Creating a model that can predict a dogs breed given an image can be extremely useful for accurately classifying animals at animal shelters. Additionally,  an accurate breed prediction and corresponding breed traits has the potential to lead to a higher rate of dog adoptions within shelters, which could save thousands of dogs lives every year. 
 
+Examples of types of visual identification that animal shelters use to classify dogs:
+- Color
+- Size
+- Fur length
+- Distinguishable features/markings (ex: Rhodesian Ridgebacks have a ridge of fur going in the oposite direction on their backs)
+- Ears: Floppy or upright
+
 Overall, creating a CNN model that can predict a dogs breed can be immensely useful for animal shelters to save time and resources, increase identification accuracy, and potentially lead to an increase in dog adoptions.
 
 

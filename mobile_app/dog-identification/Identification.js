@@ -45,7 +45,6 @@ class Identification extends React.Component {
       buffer[i] = data[offset]
       buffer[i + 1] = data[offset + 1]
       buffer[i + 2] = data[offset + 2]
-
       offset += 4
     }
 
@@ -148,7 +147,9 @@ class Identification extends React.Component {
   }
 
   render() {
-    const {modelLoaded, predictions, image, library, camera } = this.state
+    const { 
+        modelLoaded, predictions, image, library, camera 
+    } = this.state
 
     return (
         <View style={styles.container}>
