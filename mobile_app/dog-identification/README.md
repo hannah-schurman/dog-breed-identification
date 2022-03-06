@@ -14,11 +14,11 @@ This mobile application has not been deployed. Follow these steps to set the app
 
 # App Examples
 The screenshots below give examples of how the app is used:<br>
-<img src='Images/splash_screen.PNG' width=400/>
-<img src='Images/welcome.PNG'/>
-<img scr='Images/input.PNG'>
-<img src='Images/processing.PNG'/>
-<img src='Images/prediction.PNG'/>
+<img src='Images/splash_screen.PNG' width=300/>
+<img src='Images/welcome.PNG' width=300/>
+<img scr='Images/input.PNG' width=300/>
+<img src='Images/processing.PNG' width=300/>
+<img src='Images/prediction.PNG' width=300/>
 
 # Built with
 React Native
