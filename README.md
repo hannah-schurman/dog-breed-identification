@@ -105,5 +105,5 @@ For any additional questions, please contact Hannah Schurman at [hannah.schurman
 │   ├── dog-identification       # folder containing necesary files for making the mobile app
 ├── dog_breed_classier.ipynb
 ├── dog_breed_preprocessing.ipynb
-└── dog_breed_classier.pdf
+└── paw_print_presentation.pdf
 ```
