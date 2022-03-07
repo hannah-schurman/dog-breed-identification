@@ -67,7 +67,7 @@ Our final evaluation function also plotted example images of the top 5 breed pre
 # Mobile Application
 In addition to the modeling and evaluation carried out in the jupyter notebooks, this repository also contains the work done to create a mobile app for dog breed prediction. This mobile app takes input from either your phone camera or library and will predict the dog's breed as well as output the corresponding personality traits. For more information regarding the Mobile Application and how to use it, see the README.md within the [mobile_app/dog-identification](https://github.com/hannah-schurman/dog-breed-identification/tree/main/mobile_app/dog-identification) folder.
 
-<img src='images/welcome.PNG' width=200/>
+<img src='images/welcome.PNG' width=200/><br>
 <img src='images/input.PNG' width=200/>
 <img src='images/prediction_app.PNG' width=200/>
 
