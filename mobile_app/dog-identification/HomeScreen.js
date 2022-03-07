@@ -3,7 +3,7 @@ import {TouchableOpacity, ImageBackground, StyleSheet, Text, View } from 'react-
 import dog from './assets/dog_background.jpg';
 import { StatusBar } from 'expo-status-bar';
 
-
+// code for the home screen
 class HomeScreen extends React.Component {
   render() {
     return (
@@ -13,7 +13,7 @@ class HomeScreen extends React.Component {
   
             <TouchableOpacity
             onPress={() => this.props.navigation.navigate('Identify')}
-            style={styles.button1}>
+            style={styles.button}>
             <Text style={{ fontSize: 30, color: 'black' }}>Click to begin</Text>
             </TouchableOpacity>
   
@@ -46,36 +46,12 @@ const styles = StyleSheet.create({
       marginHorizontal: 30,
     },
     button: {
-      backgroundColor: 'orange', 
-      alignItems: 'center',
-      marginHorizontal: 50,
-      opacity: 0.9,
-      borderRadius: 10,
-      padding: 10,
-      marginTop: 10,
-    },
-    button1: {
       backgroundColor: 'white', 
       alignItems: 'center',
       marginHorizontal: 50,
       opacity: 0.5,
       borderRadius: 10,
       padding: 10,
-    },
-    thumbnail: {
-      width: 375,
-      height: 300,
-      resizeMode: 'contain',
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-    text: {
-      textAlign: 'center',
-      fontSize: 50,
-    },
-    text1: {
-      textAlign: 'center',
-      fontSize: 20,
     },
   })
 export default HomeScreen;

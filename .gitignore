@@ -4,6 +4,10 @@ __pycache__/
 *$py.class
 .DS_Store
 data/dog-breed-identification/train/
+data/models/inception_js/
+data/models/inception.h5
+mobile_app/dog-identification/assets/inception_js/
+
 # C extensions
 *.so
 
