@@ -82,7 +82,7 @@ Given more time and resources I would love to collect more training data so to w
 While our model has performed relatively well on being able to accurately classify 120 dog breeds, for this model to be the most useful for animal shelters it will have to improve accuracy on any mixed-breed dogs, since more often dogs in shelters are mixed-breed and not purebred.
 
 # Further Questions
-See the full analysis in the [Jupyter Notebook](https://github.com/hannah-schurman/dog-breed-identification/blob/main/dog_breed_classifier.ipynb) or review [this presentation]()
+See the full analysis in the [Jupyter Notebook](https://github.com/hannah-schurman/dog-breed-identification/blob/main/dog_breed_classifier.ipynb) or review [this presentation](https://github.com/hannah-schurman/dog-breed-identification/blob/dev/paw_print_presentation.pdf)
 
 For information regarding the mobile application, navigate to the README.md inside the [mobile_app/dog-identification](https://github.com/hannah-schurman/dog-breed-identification/tree/main/mobile_app/dog-identification) folder. 
 
