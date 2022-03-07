@@ -8,7 +8,7 @@ This mobile app alows the user to input an image of a dog from their device, eit
 This mobile application has not been deployed. Follow these steps to set the app up locally:
 1. Create an account on expo and follow their installation instructions: https://docs.expo.dev/get-started/installation/
 2. Clone this repository 
-3. Run `expo.start`
+3. Run `expo start` or `npm start`
 4. Follow the instructions to open the project on your device
 
 
