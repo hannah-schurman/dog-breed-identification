@@ -33,3 +33,6 @@ Expo
 ├── assets                     # contains splash screen, icon, and other images used in the app
 └── breeds.json                # json file containing breed names and personality traits for prediction output
 ```
+
+# Sources
+In addition to [Expo](https://docs.expo.dev/) and [Tensorflow](https://blog.tensorflow.org/2020/02/tensorflowjs-for-react-native-is-here.html) Documentations , I used [this tutorial](https://www.youtube.com/watch?v=pC7mCEHiYQw) to assist in mobile app constuction and the use of Tensorflow.js
