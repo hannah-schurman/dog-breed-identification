@@ -34,6 +34,7 @@ Expo
 ├── Homescreen.js              # class that returns the home screen containers
 ├── Identification.js          # class that inputs image and returns prediction and corresponding traits
 ├── assets                     # contains splash screen, icon, and other images used in the app
+│   ├── mobilenet              # folder containing the JSON and .bin files for the custom trained mobilenet model
 └── breeds.json                # json file containing breed names and personality traits for prediction output
 ```
 
