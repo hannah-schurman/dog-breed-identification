@@ -7,8 +7,8 @@ import {fetch, bundleResourceIO } from '@tensorflow/tfjs-react-native';
 
 
 // UNCOMMENT OUT TO USE PRE-TRAINED MOBILENET
-// import * as mobilenet from '@tensorflow-models/mobilenet'
-
+/*import * as mobilenet from '@tensorflow-models/mobilenet'
+const akc_breeds = require('./akc_breeds.json');*/
 
 const breedData = require('./breeds.json');
 
@@ -148,11 +148,11 @@ class Identification extends React.Component {
         name = breed[0].toLowerCase();
     }
     console.log('name:', name)
-    const temperament = breedData.temperament[name];
-    const group = breedData.group[name];
-    const height = Math.round((breedData.min_height[name]+breedData.max_height[name])/2);
-    const weight = Math.round((breedData.min_weight[name]+breedData.max_weight[name])/2);
-    const energy = breedData.energy_level_value[name]*10;*/
+    const temperament = akc_breeds.temperament[name];
+    const group = akc_breeds.group[name];
+    const height = Math.round((akc_breeds.min_height[name]+akc_breeds.max_height[name])/2);
+    const weight = Math.round((akc_breeds.min_weight[name]+akc_breeds.max_weight[name])/2);
+    const energy = akc_breeds.energy_level_value[name]*10;*/
 
     // COMMENT OUT TO USE PRE-TRAINED MOBILENET MODEL
     const breed = breedData['Breed'][pred];
